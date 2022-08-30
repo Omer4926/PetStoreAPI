@@ -98,7 +98,7 @@ public class Test_CRUD_Operation extends PetStoreTestBase {
                 .and().pathParam("username", petStoreUser.getLastName())
                 .body(updateUser)
                 .when().put("/user/{username}")
-                .then().statusCode(404).extract().response().prettyPrint();
+                .then().statusCode(200).extract().response().prettyPrint();
 
         RestAssured.given().accept(ContentType.JSON)
                 .pathParam("username", updateUser.getLastName())
